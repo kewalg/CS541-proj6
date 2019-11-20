@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn_choose = findViewById(R.id.choose_btn);
+        Button btn_choose = findViewById(R.id.current_btn);
         Button btn_manual = findViewById(R.id.manual_btn);
 
         btn_choose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, ChoosingActivity.class);
+                Intent i = new Intent(MainActivity.this, CurrentActivity.class);
                 startActivity(i);
             }
         });

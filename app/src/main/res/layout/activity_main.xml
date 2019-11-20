@@ -19,24 +19,24 @@
         android:id="@+id/choose_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/choose_btn"
+        android:layout_above="@id/current_btn"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:text="Make A Selection"
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/choose_btn"
+        android:id="@+id/current_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Choose on Map" />
+        android:text="Current Status/Location" />
 
     <Button
         android:id="@+id/manual_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/choose_btn"
+        android:layout_below="@id/current_btn"
         android:layout_centerHorizontal="true"
         android:text="Enter Location Manually" />
 
