@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:text="Latitude:40.1029310293"
+        android:text="Latitude: "
         android:textSize="20sp" />
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_lat"
         android:layout_centerInParent="true"
-        android:text="Longitude:40.1029310293"
+        android:text="Longitude: "
         android:textSize="20sp" />
 
 </RelativeLayout>
