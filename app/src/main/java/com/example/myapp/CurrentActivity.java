@@ -8,6 +8,8 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -16,6 +18,11 @@ import android.util.Log;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.List;
+import java.util.Locale;
 
 public class CurrentActivity extends AppCompatActivity {
 
@@ -80,10 +87,13 @@ public class CurrentActivity extends AppCompatActivity {
         TextView altitude_tv = findViewById(R.id.tv_altitude);
         TextView address_tv = findViewById(R.id.tv_address);
 
-        lat_tv.setText("Latitude: " + location.getLatitude());
-        long_tv.setText("Longitude: " + location.getLongitude());
-        accuracy_tv.setText("Accuracy: " + location.getAccuracy());
-        altitude_tv.setText("Altitude: " + location.getAltitude());
-    }
+        DecimalFormat df = new DecimalFormat("###.##");
+        DecimalFormat df1 = new DecimalFormat("###.#####");
+        lat_tv.setText("Latitude: " + df.format(location.getLatitude()));
+        long_tv.setText("Longitude: " + df.format(location.getLongitude()));
+        accuracy_tv.setText("Accuracy: " + df1.format(location.getAccuracy()));
+        altitude_tv.setText("Altitude: " + df1.format(location.getAltitude()));
+      
 
+    }
 }
