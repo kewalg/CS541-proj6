@@ -93,7 +93,38 @@ public class CurrentActivity extends AppCompatActivity {
         long_tv.setText("Longitude: " + df.format(location.getLongitude()));
         accuracy_tv.setText("Accuracy: " + df1.format(location.getAccuracy()));
         altitude_tv.setText("Altitude: " + df1.format(location.getAltitude()));
-      
 
+
+        Geocoder geocoder;
+        List<Address> addresses;
+        String address = "Could not find address!";
+        geocoder = new Geocoder(this, Locale.getDefault());
+        try {
+            addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+
+            if (addresses != null && addresses.size() > 0) {
+                address = "Address: \n";
+
+                if (addresses.get(0).getThoroughfare() != null) {
+                    address += addresses.get(0).getThoroughfare() + "\n";
+                }
+                if (addresses.get(0).getLocality() != null) {
+                    address += addresses.get(0).getLocality() + " ";
+                }
+                if (addresses.get(0).getPostalCode() != null) {
+                    address += addresses.get(0).getPostalCode() + " ";
+                }
+                if (addresses.get(0).getAdminArea() != null) {
+                    address += addresses.get(0).getAdminArea() + " ";
+                }
+
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        address_tv.setText(address);
     }
+
 }

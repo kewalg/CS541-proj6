@@ -10,8 +10,7 @@
         android:id="@+id/tv_current_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/tv_lat"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Current Status of your Phone"
         android:textSize="25sp" />
@@ -20,45 +19,50 @@
         android:id="@+id/tv_lat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_below="@id/tv_current_title"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:text="Latitude: "
         android:textSize="20sp" />
 
     <TextView
+
         android:id="@+id/tv_long"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_lat"
-        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
         android:text="Longitude: "
         android:textSize="20sp" />
 
     <TextView
+
         android:id="@+id/tv_accuracy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_long"
-        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
         android:text="Accuracy: "
         android:textSize="20sp" />
 
     <TextView
+
         android:id="@+id/tv_altitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_accuracy"
-        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
         android:text="Altitude: "
         android:textSize="20sp" />
 
     <TextView
+
         android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_altitude"
-        android:layout_centerInParent="true"
-        android:text="Address: "
+        android:layout_marginLeft="20dp"
+        android:text="Current Address: "
         android:textSize="20sp" />
 
 </RelativeLayout>
