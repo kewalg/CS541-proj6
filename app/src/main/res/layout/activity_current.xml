@@ -34,4 +34,31 @@
         android:text="Longitude: "
         android:textSize="20sp" />
 
+    <TextView
+        android:id="@+id/tv_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_long"
+        android:layout_centerInParent="true"
+        android:text="Accuracy: "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_altitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_accuracy"
+        android:layout_centerInParent="true"
+        android:text="Altitude: "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_altitude"
+        android:layout_centerInParent="true"
+        android:text="Address: "
+        android:textSize="20sp" />
+
 </RelativeLayout>

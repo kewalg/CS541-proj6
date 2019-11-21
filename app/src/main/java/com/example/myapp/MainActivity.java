@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn_choose = findViewById(R.id.current_btn);
-        Button btn_manual = findViewById(R.id.manual_btn);
+        Button btn_manual = findViewById(R.id.weather_btn);
 
         btn_choose.setOnClickListener(new View.OnClickListener() {
             @Override

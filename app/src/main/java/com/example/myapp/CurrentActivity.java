@@ -13,6 +13,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class CurrentActivity extends AppCompatActivity {
 
@@ -28,7 +31,7 @@ public class CurrentActivity extends AppCompatActivity {
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                Log.i("Location", location.toString());
+                updateLocationinfo(location);
             }
 
             @Override
@@ -71,7 +74,16 @@ public class CurrentActivity extends AppCompatActivity {
 
     public void updateLocationinfo(Location location) {
         Log.i("Location", location.toString());
+        TextView lat_tv = findViewById(R.id.tv_lat);
+        TextView long_tv = findViewById(R.id.tv_long);
+        TextView accuracy_tv = findViewById(R.id.tv_accuracy);
+        TextView altitude_tv = findViewById(R.id.tv_altitude);
+        TextView address_tv = findViewById(R.id.tv_address);
 
+        lat_tv.setText("Latitude: " + location.getLatitude());
+        long_tv.setText("Longitude: " + location.getLongitude());
+        accuracy_tv.setText("Accuracy: " + location.getAccuracy());
+        altitude_tv.setText("Altitude: " + location.getAltitude());
     }
 
 }
