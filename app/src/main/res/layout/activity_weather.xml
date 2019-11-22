@@ -7,50 +7,50 @@
     tools:context=".WeatherActivity">
 
 
-    <TextView
-        android:id="@+id/tv_title_weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Weather Status"
-        android:textSize="35sp" />
+    <!--    <TextView
+            android:id="@+id/tv_title_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Weather Status"
+            android:textSize="35sp" />
 
-    <EditText
-        android:id="@+id/edt_city_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_title_weather"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Enter city name:" />
+        <EditText
+            android:id="@+id/edt_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_weather"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Enter city name:" />
 
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_sunset"
-        android:text="Submit" />
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_sunset"
+            android:text="Submit" />
 
-    <TextView
-        android:id="@+id/tv_temp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edt_city_name"
-        android:text="Temperature: " />
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_city_name"
+            android:text="Temperature: " />
 
 
-    <TextView
-        android:id="@+id/tv_sunrise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_temp"
-        android:text="Sunrise: " />
+        <TextView
+            android:id="@+id/tv_sunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_temp"
+            android:text="Sunrise: " />
 
-    <TextView
-        android:id="@+id/tv_sunset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_sunrise"
-        android:text="Sunset: " />
+        <TextView
+            android:id="@+id/tv_sunset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_sunrise"
+            android:text="Sunset: " />-->
 
 </RelativeLayout>

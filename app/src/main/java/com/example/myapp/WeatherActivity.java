@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.androdocs.httprequest.HttpRequest;
@@ -33,7 +34,7 @@ public class WeatherActivity extends AppCompatActivity {
 
             try {
                 url = new URL(urls[0]);
-                urlConnection = (HttpURLConnection url.openConnection());
+                urlConnection = (HttpURLConnection) url.openConnection();
                 InputStream in = urlConnection.getInputStream();
                 InputStreamReader reader = new InputStreamReader(in);
                 int data = reader.read();
@@ -48,6 +49,12 @@ public class WeatherActivity extends AppCompatActivity {
                 return null;
             }
         }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            Log.i("JSON", s);
+        }
     }
 
 
@@ -55,6 +62,9 @@ public class WeatherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+
+        DownloadTask task = new DownloadTask();
+        task.execute("https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22");
     }
 }
 
