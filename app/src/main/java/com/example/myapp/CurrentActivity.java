@@ -7,7 +7,9 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Paint;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -15,6 +17,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -28,11 +32,21 @@ public class CurrentActivity extends AppCompatActivity {
 
     LocationManager locationManager;
     LocationListener locationListener;
+    Button back_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current);
+        back_btn = findViewById(R.id.btn_back);
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(CurrentActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
 
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         locationListener = new LocationListener() {
@@ -84,8 +98,10 @@ public class CurrentActivity extends AppCompatActivity {
         TextView lat_tv = findViewById(R.id.tv_lat);
         TextView long_tv = findViewById(R.id.tv_long);
         TextView accuracy_tv = findViewById(R.id.tv_accuracy);
+        TextView title_tv = findViewById(R.id.tv_current_title);
         TextView altitude_tv = findViewById(R.id.tv_altitude);
         TextView address_tv = findViewById(R.id.tv_address);
+
 
         DecimalFormat df = new DecimalFormat("###.##");
         DecimalFormat df1 = new DecimalFormat("###.#####");
@@ -103,10 +119,10 @@ public class CurrentActivity extends AppCompatActivity {
             addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
 
             if (addresses != null && addresses.size() > 0) {
-                address = "Address: \n";
+                address = "Address: ";
 
                 if (addresses.get(0).getThoroughfare() != null) {
-                    address += addresses.get(0).getThoroughfare() + "\n";
+                    address += addresses.get(0).getThoroughfare() + " ";
                 }
                 if (addresses.get(0).getLocality() != null) {
                     address += addresses.get(0).getLocality() + " ";

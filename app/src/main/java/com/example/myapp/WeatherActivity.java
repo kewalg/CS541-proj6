@@ -2,10 +2,12 @@ package com.example.myapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     EditText edt_weather;
     TextView tv_main, tv_desc, tv_temp, tv_pressure, tv_humidity;
+    Button btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,15 @@ public class WeatherActivity extends AppCompatActivity {
         tv_temp = findViewById(R.id.tv_temp);
         tv_pressure = findViewById(R.id.tv_pressure);
         tv_humidity = findViewById(R.id.tv_humidity);
+        btn_back = findViewById(R.id.btn_back_weather);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(WeatherActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void getWeather(View view) {
@@ -84,10 +96,10 @@ public class WeatherActivity extends AppCompatActivity {
                     String main = jsonPart.getString("main");
                     String desc = jsonPart.getString("description");
                     if (!main.equals("")) {
-                        tv_main.setText(main);
+                        tv_main.setText("Forecast: " + main);
                     }
                     if (!desc.equals("")) {
-                        tv_desc.setText(desc);
+                        tv_desc.setText("Description: " + desc);
                     }
                 }
 
@@ -97,13 +109,13 @@ public class WeatherActivity extends AppCompatActivity {
                 String humidity = jsonObject3.getString("humidity");
 
                 if (!temp.equals("")) {
-                    tv_temp.setText(temp);
+                    tv_temp.setText("Temperature: " + temp + " °C");
                 }
                 if (!pressure.equals("")) {
-                    tv_pressure.setText(pressure);
+                    tv_pressure.setText("Pressure: " + pressure + " in");
                 }
                 if (!humidity.equals("")) {
-                    tv_humidity.setText(humidity);
+                    tv_humidity.setText("Humidity: " + humidity + " %");
                 }
 
 

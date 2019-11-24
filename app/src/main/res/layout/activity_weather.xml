@@ -7,80 +7,158 @@
     android:background="@drawable/bg"
     tools:context=".WeatherActivity">
 
+    <TextView
+        android:id="@+id/tv_title_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/rajdhani"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="Weather Status"
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/edt_cityname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title_weather"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rajdhani"
         android:hint="enter city name"
-        android:textColor="#ffffff" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:textAlignment="center"
+        android:textColorHint="#ffffff"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt_cityname"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="100sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50sp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/rajdhani"
         android:onClick="getWeather"
-        android:text="submit" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="submit"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_back_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_toRightOf="@id/btn_submit"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/rajdhani"
+        android:onClick="getWeather"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="Back"
+        android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/tv_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_submit"
+        android:layout_below="@id/edt_cityname"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rajdhani"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="5"
-        android:text="main"
-        android:textColor="#ffffff" />
+        android:text="Forecast: "
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_main"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rajdhani"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="5"
-        android:text="desc"
-        android:textColor="#ffffff" />
+        android:text="Description: "
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tv_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_desc"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rajdhani"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="5"
-        android:text="temp"
-        android:textColor="#ffffff" />
+        android:text="Temperature: "
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tv_pressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_temp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rajdhani"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="5"
-        android:text="pressure"
-        android:textColor="#ffffff" />
+        android:text="Pressure: "
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/tv_humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_pressure"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rajdhani"
         android:shadowColor="#000000"
         android:shadowDx="2"
         android:shadowDy="2"
         android:shadowRadius="5"
-        android:text="humidity"
-        android:textColor="#ffffff" />
+        android:text="Humidity: "
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
 
 
 </RelativeLayout>
