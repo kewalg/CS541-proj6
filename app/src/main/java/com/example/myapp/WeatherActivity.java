@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.InputStream;
@@ -75,10 +74,8 @@ public class WeatherActivity extends AppCompatActivity {
                 JSONObject jsonObject1 = new JSONObject(s);
 
                 String weatherinfo = jsonObject.getString("weather");
-               // String otherinfo = jsonObject1.getString("main");
 
                 Log.i("Weather content", weatherinfo);
-                //Log.i("Other content", otherinfo);
 
                 JSONArray arr = new JSONArray(weatherinfo);
 
@@ -93,7 +90,7 @@ public class WeatherActivity extends AppCompatActivity {
                         tv_desc.setText(desc);
                     }
                 }
-                // JSONArray other_arr = new JSONArray(otherinfo);
+
                 JSONObject jsonObject3 = jsonObject1.getJSONObject("main");
                 String temp = jsonObject3.getString("temp");
                 String pressure = jsonObject3.getString("pressure");

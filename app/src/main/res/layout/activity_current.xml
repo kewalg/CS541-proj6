@@ -4,15 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".CurrentActivity">
 
     <TextView
+
         android:id="@+id/tv_current_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         android:text="Current Status of your Phone"
+        android:textColor="#ffffff"
         android:textSize="25sp" />
 
     <TextView
@@ -22,7 +29,12 @@
         android:layout_below="@id/tv_current_title"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         android:text="Latitude: "
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <TextView
@@ -32,7 +44,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_lat"
         android:layout_marginLeft="20dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         android:text="Longitude: "
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <TextView
@@ -42,7 +59,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_long"
         android:layout_marginLeft="20dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         android:text="Accuracy: "
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <TextView
@@ -53,6 +75,7 @@
         android:layout_below="@id/tv_accuracy"
         android:layout_marginLeft="20dp"
         android:text="Altitude: "
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <TextView
@@ -62,7 +85,22 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_altitude"
         android:layout_marginLeft="20dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         android:text="Current Address: "
+        android:textColor="#ffffff"
         android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_address"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_button"
+        android:text="Back" />
 
 </RelativeLayout>

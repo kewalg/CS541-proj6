@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".WeatherActivity">
 
     <EditText
         android:id="@+id/edt_cityname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="enter city name" />
+        android:hint="enter city name"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/btn_submit"
@@ -25,35 +27,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_submit"
-        android:text="main" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="main"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_main"
-        android:text="desc" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="desc"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/tv_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_desc"
-        android:text="temp" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="temp"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/tv_pressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_temp"
-        android:text="pressure" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="pressure"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/tv_humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_pressure"
-        android:text="humidity" />
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="humidity"
+        android:textColor="#ffffff" />
 
 
 </RelativeLayout>

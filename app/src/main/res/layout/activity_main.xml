@@ -4,41 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/choose_tv"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         android:text="myWeatherApp"
-        android:textSize="50sp" />
+        android:textColor="#ffffff"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/rajdhani" />
 
     <TextView
         android:id="@+id/choose_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/current_btn"
+        android:layout_below="@id/title_tv"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="-10dp"
         android:layout_marginBottom="20dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
         android:text="Make A Selection"
-        android:textSize="25sp" />
+        android:textColor="#ffffff"
+        android:textSize="35sp"
+        app:fontFamily="@font/rajdhani" />
 
     <Button
         android:id="@+id/current_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/choose_tv"
         android:layout_centerInParent="true"
-        android:text="Current Status/Location" />
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/rajdhani"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="Get current location"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <Button
+
         android:id="@+id/weather_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/current_btn"
         android:layout_centerHorizontal="true"
-        android:text="Get Weather Status" />
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/rajdhani"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="Get weather at specific location"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
