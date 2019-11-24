@@ -73,18 +73,19 @@ public class WeatherActivity extends AppCompatActivity {
             try {
                 JSONObject jsonObject = new JSONObject(s);
                 JSONObject jsonObject1 = new JSONObject(s);
+
                 String weatherinfo = jsonObject.getString("weather");
-                String otherinfo = jsonObject1.getString("main");
+               // String otherinfo = jsonObject1.getString("main");
 
                 Log.i("Weather content", weatherinfo);
-                Log.i("Other content", otherinfo);
-                Log.i("JSON", s);
+                //Log.i("Other content", otherinfo);
+
                 JSONArray arr = new JSONArray(weatherinfo);
+
                 for (int i = 0; i < arr.length(); i++) {
                     JSONObject jsonPart = arr.getJSONObject(i);
                     String main = jsonPart.getString("main");
                     String desc = jsonPart.getString("description");
-
                     if (!main.equals("")) {
                         tv_main.setText(main);
                     }
@@ -92,9 +93,25 @@ public class WeatherActivity extends AppCompatActivity {
                         tv_desc.setText(desc);
                     }
                 }
-                JSONArray other_arr = new JSONArray(otherinfo);
-                for (int j = 0; j < other_arr.length(); j++) {
-                    JSONObject jsonPart1 = other_arr.getJSONObject(j);
+                // JSONArray other_arr = new JSONArray(otherinfo);
+                JSONObject jsonObject3 = jsonObject1.getJSONObject("main");
+                String temp = jsonObject3.getString("temp");
+                String pressure = jsonObject3.getString("pressure");
+                String humidity = jsonObject3.getString("humidity");
+
+                if (!temp.equals("")) {
+                    tv_temp.setText(temp);
+                }
+                if (!pressure.equals("")) {
+                    tv_pressure.setText(pressure);
+                }
+                if (!humidity.equals("")) {
+                    tv_humidity.setText(humidity);
+                }
+
+
+                /*for (int j = 0; j < ja.length(); j++) {
+                    JSONObject jsonPart1 = ja.getJSONObject(j);
                     String temp = jsonPart1.getString("temp");
                     String pressure = jsonPart1.getString("pressure");
                     String humidity = jsonPart1.getString("humidity");
@@ -105,15 +122,13 @@ public class WeatherActivity extends AppCompatActivity {
                         tv_pressure.setText(pressure);
                     }
                     if (!humidity.equals("")) {
-                        tv_humidity.setText(pressure);
+                        tv_humidity.setText(humidity);
                     }
-                }
+                }*/
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
     }
-
-
 }
