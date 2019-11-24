@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,12 +21,18 @@ import java.net.URL;
 public class WeatherActivity extends AppCompatActivity {
 
     EditText edt_weather;
+    TextView tv_main, tv_desc, tv_temp, tv_pressure, tv_humidity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         edt_weather = findViewById(R.id.edt_cityname);
+        tv_main = findViewById(R.id.tv_main);
+        tv_desc = findViewById(R.id.tv_desc);
+        tv_temp = findViewById(R.id.tv_temp);
+        tv_pressure = findViewById(R.id.tv_pressure);
+        tv_humidity = findViewById(R.id.tv_humidity);
     }
 
     public void getWeather(View view) {
@@ -65,13 +72,41 @@ public class WeatherActivity extends AppCompatActivity {
             super.onPostExecute(s);
             try {
                 JSONObject jsonObject = new JSONObject(s);
+                JSONObject jsonObject1 = new JSONObject(s);
                 String weatherinfo = jsonObject.getString("weather");
+                String otherinfo = jsonObject1.getString("main");
+
                 Log.i("Weather content", weatherinfo);
+                Log.i("Other content", otherinfo);
+                Log.i("JSON", s);
                 JSONArray arr = new JSONArray(weatherinfo);
                 for (int i = 0; i < arr.length(); i++) {
                     JSONObject jsonPart = arr.getJSONObject(i);
-                    Log.i("main", jsonPart.getString("main"));
-                    Log.i("description", jsonPart.getString("description"));
+                    String main = jsonPart.getString("main");
+                    String desc = jsonPart.getString("description");
+
+                    if (!main.equals("")) {
+                        tv_main.setText(main);
+                    }
+                    if (!desc.equals("")) {
+                        tv_desc.setText(desc);
+                    }
+                }
+                JSONArray other_arr = new JSONArray(otherinfo);
+                for (int j = 0; j < other_arr.length(); j++) {
+                    JSONObject jsonPart1 = other_arr.getJSONObject(j);
+                    String temp = jsonPart1.getString("temp");
+                    String pressure = jsonPart1.getString("pressure");
+                    String humidity = jsonPart1.getString("humidity");
+                    if (!temp.equals("")) {
+                        tv_temp.setText(temp);
+                    }
+                    if (!pressure.equals("")) {
+                        tv_pressure.setText(pressure);
+                    }
+                    if (!humidity.equals("")) {
+                        tv_humidity.setText(pressure);
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
